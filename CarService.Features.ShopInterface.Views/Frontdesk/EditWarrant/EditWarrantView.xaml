@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="CarService.Features.ShopInterface.Views.Frontdesk.EditWarrant.EditWarrantView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CarService.Features.ShopInterface.Views.Frontdesk.EditWarrant"
+             xmlns:controls="clr-namespace:CarService.Features.ShopInterface.Controls;assembly=CarService.Features.ShopInterface.Controls"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance Type=local:EditWarrantViewModel}">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadWarrantTypesCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <controls:EditWarrantControl Grid.Row="0" Warrant="{Binding Warrant}" AvailableWarrantTypes="{Binding AvailableWarrantTypes}" ShowAllProperties="True"/>
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="Spremi" Command="{Binding SaveWarrantCommand}" />
+
+            <Button Grid.Column="1" Content="Obriši" Command="{Binding DeleteWarrantCommand}" />
+
+        </Grid>
+
+
+    </Grid>
+</UserControl>

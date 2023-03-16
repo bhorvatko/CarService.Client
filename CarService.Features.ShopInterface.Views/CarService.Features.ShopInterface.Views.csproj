@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarService.Client.Core.MVVM\CarService.Client.Core.MVVM.csproj" />
+    <ProjectReference Include="..\CarService.Client.Core.Settings\CarService.Client.Core.Settings.csproj" />
+    <ProjectReference Include="..\CarService.Client.Core.WPF\CarService.Client.Core.WPF.csproj" />
+    <ProjectReference Include="..\CarService.Features.ShopInterface.Controls\CarService.Features.ShopInterface.Controls.csproj" />
+    <ProjectReference Include="..\CarService.Features.ShopInterface.Services\CarService.Features.ShopInterface.Services.csproj" />
+  </ItemGroup>
+
+</Project>

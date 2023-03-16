@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetProjects.Extended.Wpf.Toolkit" Version="5.0.103" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarService.Client.Core.WPF\CarService.Client.Core.WPF.csproj" />
+    <ProjectReference Include="..\CarService.Features.ShopInterface.Model\CarService.Features.ShopInterface.Model.csproj" />
+    <ProjectReference Include="..\CarService.Features.ShopInterface.Services\CarService.Features.ShopInterface.Services.csproj" />
+  </ItemGroup>
+
+</Project>
