@@ -1,4 +1,5 @@
 ﻿using CarService.Features.ShopInterface.Model;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace CarService.Features.ShopInterface.Controls
     /// <summary>
     /// Interaction logic for WarrantPreview.xaml
     /// </summary>
-    public partial class WarrantPreview : UserControl
+    public partial class WarrantPreview : UserControl, INotifyPropertyChanged
     {
         private static AnimationClock? displaySubjectClock;
 
@@ -74,7 +75,7 @@ namespace CarService.Features.ShopInterface.Controls
 
             displaySubjectClock.Tick += (s, e) =>
             {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LabelContent)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("LabelContent"));
             };
         }
 

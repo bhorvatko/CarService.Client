@@ -25,7 +25,7 @@ namespace CarService.Features.ShopInterface.Services.GraphQL.Interactors
 
         public async Task<IEnumerable<Technician>> GetTechnicians()
         {
-            string query = queryBuilder.BuildQuery<TechnicianDto>("allTechnicians", nameof(TechnicianDto.Warrants));
+            string query = queryBuilder.BuildQuery<TechnicianDto>("allTechnicians");
 
             AllTechniciansResponse response = await qlClient.ExecuteQuery<AllTechniciansResponse>(query);
 
